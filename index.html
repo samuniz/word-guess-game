@@ -12,29 +12,27 @@
   <link rel="stylesheet" href="assets/css/reset.css">
   <link rel="stylesheet" href="assets/css/style.css">
 
+  
   <meta name="theme-color" content="#fafafa">
 </head>
 
 <body>
     <h2>Press any key to get started!</h2>
-    <p>wins</p>
-    <p>loses</p>
-    <p>current word</p>
-    <p>number of guesses remaining</p>
-    <p>letters already guessed</p>
+    <p>Score: <span id="wins"></span></p>
+    <p>Lifes: <span id ="lifes"></span></p>
+    <p>Current word </p>
+    <p id ="wordToGuess"></p>
+    <p>number of guesses remaining: <span id= "wrongTries"></span></p>
+    <p>letters already guessed: <span id="userGuess"></span></p>
   
-  <script src="assets/javascript/game.js"></script>
-  <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-  <script>window.jQuery || document.write('<script src="js/vendor/jquery-3.4.1.min.js"><\/script>')</script>
+  
 
 
 
   <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
-  <script>
-    window.ga = function () { ga.q.push(arguments) }; ga.q = []; ga.l = +new Date;
-    ga('create', 'UA-XXXXX-Y', 'auto'); ga('set','transport','beacon'); ga('send', 'pageview')
-  </script>
-  <script src="https://www.google-analytics.com/analytics.js" async></script>
-</body>
 
+   
+  
+</body>
+<script type="text/javascript" src="assets/javascript/game.js"></script>
 </html>

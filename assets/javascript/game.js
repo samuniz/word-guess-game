@@ -1,26 +1,30 @@
-var words = ["jupiter", "comet", "star", "moon", "sky", "pluto", "eclipse", "nebula", "supernova", "zodiac", "galaxy"];
-var score; 
+// @ts-nocheck
+var words = ["jupiter", "comet", "star", "sun", "sky", "pluto", "eclipse", "nebula", "supernova", "zodiac", "galaxy"];
+var score = 0; 
 var wrongGuess = [];
-var wrongTries = 0;
+var lifes = 0;
 var userGuess = [];
 var wordToGuess = [];
 var rightWord = []; 
- 
+
 //user press any key to start the game
 
-    
-var randomWord = words[Math.floor(Math.random()* words.length)]
+var randomWord = words[Math.floor(Math.random()* words.length)] 
     console.log(randomWord); 
     for (var i = 0; i < randomWord.length; i++){
         //create the _ in the page 
         wordToGuess.push(" _ "); 
     }
-
+    // print _ to the page 
+    document.getElementById("wordToGuess").innerHTML = wordToGuess.join(" ");
+    // print lifes to the page
+    document.getElementById("lifes").innerHTML = lifes; 
+    
     //user press a key and key is saved on userGuess variable
     document.onkeyup = function (event) {
         var userGuess = event.key.toString();
-        
-     
+        // console.log(userGuess); 
+        document.getElementById("userGuess").innerHTML = wrongGuess;
      //compare the user guess with random word    
         if (randomWord.indexOf(userGuess) >-1) {
             //if user guess is correct add the letter to variable rightWord 
@@ -28,21 +32,26 @@ var randomWord = words[Math.floor(Math.random()* words.length)]
 
             // replace _ with correspondent letter 
             wordToGuess[randomWord.indexOf(userGuess)] = userGuess; 
-            // console.log(wordToGuess)
+            // print the letter on _
+            document.getElementById("wordToGuess").innerHTML = wordToGuess.join(" ");
             if (randomWord.length == rightWord.length) {
                 score++    
             }
+            // Print score to the page 
+            document.getElementById("wins").innerHTML = score; 
         } 
         else {
             //add wrong guess to var
-            wrongGuess.push(userGuess);  
-            if (wrongGuess.length >10){
-                alert("You lost!");}
-        }
+            wrongGuess.push(userGuess)
+            console.log(wrongGuess); 
+                if (wrongGuess.length > 10){    
+                   alert("You Lost!")
+               
+            }
+       
     
-      
 }
-
+}
 
           //user press a key to choose a word from the computer choice
         //   document.onkeyup = function(event) {
@@ -115,8 +124,3 @@ var randomWord = words[Math.floor(Math.random()* words.length)]
   //Why my letterGuessed variable is not saving when function runs ?
   //should I put the function inside a while loop ?
   //How can I display the length of computer choice as _ and when user guess the right lettter review the letter guessed ?
-
-        
-
-
-
