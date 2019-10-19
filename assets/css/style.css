@@ -1,0 +1,16 @@
+body {
+    height: 500px; 
+    background: url("../images/background.jpg");  
+    background-size: cover;
+}
+
+h1, h2, p{
+    font-family: 'Righteous', cursive;
+    font-size: 60px; 
+    color: aliceblue; 
+    text-align: center; 
+}
+
+p{
+    font-size: 30px; 
+}

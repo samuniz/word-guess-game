@@ -6,10 +6,10 @@ var lifes = 0;
 var userGuess = [];
 var wordToGuess = [];
 var rightWord = []; 
-
+var randomWord = "";
 //user press any key to start the game
-
-var randomWord = words[Math.floor(Math.random()* words.length)] 
+function random() {
+    randomWord = words[Math.floor(Math.random()* words.length)] 
     console.log(randomWord); 
     for (var i = 0; i < randomWord.length; i++){
         //create the _ in the page 
@@ -17,8 +17,12 @@ var randomWord = words[Math.floor(Math.random()* words.length)]
     }
     // print _ to the page 
     document.getElementById("wordToGuess").innerHTML = wordToGuess.join(" ");
-    // print lifes to the page
-    document.getElementById("lifes").innerHTML = lifes; 
+}
+
+    
+   
+random();    
+   
     
     //user press a key and key is saved on userGuess variable
     document.onkeyup = function (event) {
@@ -45,8 +49,9 @@ var randomWord = words[Math.floor(Math.random()* words.length)]
             wrongGuess.push(userGuess)
             console.log(wrongGuess); 
                 if (wrongGuess.length > 10){    
-                   alert("You Lost!")
-               
+                   alert("You Lost! Refresh to start over.")
+                   
+               random(); 
             }
        
     
