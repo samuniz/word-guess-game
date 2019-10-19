@@ -23,19 +23,14 @@ function underscore() {
     
     document.getElementById("wordToGuess").innerHTML = wordToGuess.join(" ");
     document.getElementById("lifes").innerHTML = life;
-    
+   
    
 
 
     //user press a key and key is saved on userGuess variable
     document.onkeyup = function gameStart (event) { 
-        userGuess = event.key.toString();
-        // console.log(userGuess); 
-        
-    
-
-    // console.log("This is the user guess " + userGuess); 
-
+        userGuess = event.key.toString().toLowerCase();
+           
   
         
              
@@ -57,14 +52,14 @@ function underscore() {
             document.getElementById("wins").innerHTML = score; 
             } else {
             //add wrong guess to var
+            document.getElementById("userGuess").innerHTML= " " + wrongGuess; 
                 wrongGuess.push(userGuess)
                 console.log(wrongGuess);
                 if (wrongGuess.length > 9){
                     // alert("You lost!")
                     life --;
                     console.log("this is the life " + life); 
-                     
-                    
+                    wrongGuess.splice(0,wrongGuess.length);    
                     underscore();  
                 }
                              
@@ -76,3 +71,4 @@ function underscore() {
  
     
     underscore();    
+    
